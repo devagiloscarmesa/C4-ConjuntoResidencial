@@ -72,13 +72,33 @@
                 <div class="tab-content" id="mis-tabs">
                   <div class="tab-pane fade show active" id="crear-mensualidad" role="tabpanel" aria-labelledby="ver-estadistica-tab">
                       <div class="row">
-                        <div class="col-10">
+                        <div class="col-11">
                           <form class="form">
                             <input class="form-control" type="search" placeholder="Filtrar" aria-label="Search"> 
                           </form>
                         </div>
-                        <div class="col-2">
-                          <button class="btn btn-info" type="button"><i class="fas fa-search-plus"></i></button>
+                        <div class="col-1">
+                          <button class="btn btn-info" type="button" id="btn-filtrar"><i class="fas fa-search-plus"></i></button>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="table-responsive">
+                              <table class="table table-bordered" id="tbl-mensualidades">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Edad</th>
+                                    <th scope="col">Genero</th>
+                                    <th scope="col">Total a pagar</th>
+                                    <th scope="col">Fecha de mensualidad</th>
+                                    <th scope="col">Acciones</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                              </table>
+                            </div>
                         </div>
                       </div>
                   </div>
@@ -89,6 +109,14 @@
             </div>
           </div>
         </section>
+
+        <footer>
+          <div class="row">
+              <div class="col-12 text-center p-2">
+                  <p>Copyright© 2020 | Medellin - Antioquio, Colombia | <a href="https://github.com/devoscarmesa"><i class="fab fa-github"></i></a> | <a href="#"><i class="fab fa-facebook"></i></a> | <a href="#"><i class="fab fa-twitter"></i></a></p>
+              </div>
+          </div>
+      </footer>
     </main>
     
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
