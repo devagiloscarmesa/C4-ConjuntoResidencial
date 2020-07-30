@@ -80,21 +80,77 @@
                         <div class="col-2">
                           <button class="btn btn-info" type="button" id="btn-filtrar"><i class="fas fa-search-plus"></i></button>
                           <button class="btn btn-info" type="button" id="btn-adicionar"><i class="fas fa-plus"></i></button>
-                          <div class="modal" id="modal-adicionar" tabindex="-1" role="dialog">
-                            <div class="modal-dialog">
+                          <div class="modal fade" id="modal-adicionar" tabindex="-1" role="dialog">
+                            <div class="modal-dialog modal-lg">
                               <div class="modal-content">
                                 <div class="modal-header">
-                                  <h5 class="modal-title">Modal title</h5>
+                                  <h5 class="modal-title">Adicionar Mensualidad</h5>
                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                   </button>
                                 </div>
                                 <div class="modal-body">
-                                  <p>Modal body text goes here.</p>
+                                <form id="frm-mensualidad">
+                                  <div class="card text-left bg-primary text-white">
+                                    <div class="card-header">
+                                      Datos del propietario
+                                    </div>
+                                    <div class="card-body">
+                                        <article class="row">
+                                          <article class="col-6">
+                                            <div class="form-group">
+                                              <label for="nombre-propietario">Nombre (*)</label>
+                                              <input type="text" class="form-control" id="nombre-propietario" placeholder="Nombre del propietario" required/>
+                                            </div>
+                                          </article>
+                                          <article class="col-6">
+                                            <div class="form-group">
+                                              <label for="doc-propietario">Documento (*)</label>
+                                              <input type="text" class="form-control" id="doc-propietario" placeholder="Documento del propietario" required/>
+                                            </div>
+                                          </article>
+                                        </article>
+                                        <article class="row">
+                                          <article class="col-6">
+                                            <div class="form-group">
+                                              <label for="genero-propietario">Genero (*)</label>
+                                              <select class="form-control" id="genero-propietario" required>
+                                                <option style="display: none;" selected value></option>
+                                                <option value="H">Hombre</option>
+                                                <option value="M">Mujer</option>
+                                              </select>
+                                            </div>
+                                          </article>
+                                          <article class="col-6">
+                                            <div class="form-group">
+                                              <label for="fecha-nac-propietario">Fecha de nacimeinto (*)</label>
+                                              <input type="date" class="form-control" id="fecha-nac-propietario" placeholder="Fecha de nacimiento del propietario" required/>
+                                            </div>
+                                          </article>
+                                        </article>
+                                    </div>
+                                  </div>
+
+                                  <div class="card mt-4 text-left bg-info text-white">
+                                    <div class="card-header">
+                                      Datos de inmueble en la mensualidad
+                                    </div>
+                                    <div class="card-body">
+                                      <article class="row">
+                                        <article class="col-6"></article>
+                                        <article class="col-6"></article>
+                                      </article>
+                                      <article class="row">
+                                        <article class="col-6"></article>
+                                        <article class="col-6"></article>
+                                      </article>
+                                    </div>
+                                  </div>
+                                </form>
                                 </div>
                                 <div class="modal-footer">
-                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                  <button type="button" class="btn btn-primary">Save changes</button>
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Salir</button>
+                                  <button type="button" class="btn btn-primary" id="btn-guardar-inmueble">Guardar</button>
                                 </div>
                               </div>
                             </div>
