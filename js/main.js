@@ -1,9 +1,12 @@
+//import {saludarAlPublico, NOMBRE,edad} from './modulo.js';
+import jsonModulo from './modulo.js';
+	
 const DATOS_FORMULARIO = [
     {
         datos_propietario : {
             nombre : "Juan Perez", 
             documento : "89736363", 
-            genero : "M", 
+            genero : "H", 
             fech_nac : "10-10-1980"
         }, 
         datos_inmueble : {
@@ -83,7 +86,7 @@ function cargarDatosEnTabla(){
         document.querySelector("#tbl-mensualidades tbody").innerHTML += `<tr>
                                                                         <td>${registro.datos_propietario.nombre}</td>
                                                                         <td>${calcularEdad(new Date(registro.datos_propietario.fech_nac))} años</td>
-                                                                        <td>${registro.datos_propietario.genero}</td>
+                                                                        <td>${registro.datos_propietario.genero === "F" ? "Mujer" : "Hombre"}</td>
                                                                         <td>${0}</td>
                                                                         <td>${registro.datos_inmueble.fech_mensualidad}</td>
                                                                         <td><a>Ver</a></td>
@@ -109,4 +112,18 @@ function recorrerVector(){
     console.log(r);
 }
 
+function condicionalReducido(){
+    let x, year = 2020;
+    //x = condicion ? valor_que_cumple : valor_alternativo;
+    x = year > 2000 ? 5 : 6;
+    // if(year > 2000){
+    //     x = 5;
+    // }else{
+    //     x = 6;
+    // }
+    return x;
+}
+
 cargarDatosEnTabla();
+jsonModulo.funcionSaludar();
+//console.log("El nombre que se importo fue " + NOMBRE + " y la edad fue "+edad)
