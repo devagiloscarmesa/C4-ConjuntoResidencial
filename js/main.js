@@ -76,3 +76,14 @@ $(document).ready((e) => {
     });
 });
 
+function recorrerVector(){
+    let arreglo = [3,5,6,8,1];
+    // for (let i = 0; i < arreglo.length; i++) {
+    //     console.log(arreglo[i]);      
+    // }
+    //let r =  arreglo.forEach( x => console.log(x) );
+    let r =  arreglo.map( x => x + 1);
+    console.log(arreglo);
+    console.log(r);
+}
+
