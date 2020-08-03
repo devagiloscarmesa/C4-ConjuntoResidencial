@@ -1,8 +1,8 @@
 const DATOS_FORMULARIO = [
     {
         datos_propietario : {
-            nombre : "Juan", 
-            documento : "Perez", 
+            nombre : "Juan Perez", 
+            documento : "89736363", 
             genero : "M", 
             fech_nac : "10-10-1980"
         }, 
@@ -26,7 +26,7 @@ numeros.map(function(elemento, p){
 ["posición: 1","posición: 2","posición: 3","posición: 4","posición: 5"]
 */
 	
-document.getElementById("btn-guardar-inmueble").addEventListener('click', (e) =>{
+document.getElementById("btn-guardar-inmueble").addEventListener('click', e => {
 	let nombre_almacenado, documento_almacenado, 
             genero_almacenado, fecha_nac_almacenada,mt_inmueble_almacenado,tipo_inmueble_almacenado, 
             num_habitantes_inmueble_almacenado, fech_men_inmueble_almacenado;
@@ -66,6 +66,7 @@ document.getElementById("btn-guardar-inmueble").addEventListener('click', (e) =>
     DATOS_FORMULARIO.push(inmueble);
     document.getElementById("frm-mensualidad").reset();
     alert("Los datos fueron almacenados");
+    cargarDatosEnTabla();
     $('#modal-adicionar').modal('toggle');
         
 });
@@ -75,6 +76,27 @@ $(document).ready((e) => {
         $('#modal-adicionar').modal('toggle');
     });
 });
+
+function cargarDatosEnTabla(){
+	document.querySelector("#tbl-mensualidades tbody").innerHTML = "";
+    DATOS_FORMULARIO.forEach( registro => {
+        document.querySelector("#tbl-mensualidades tbody").innerHTML += `<tr>
+                                                                        <td>${registro.datos_propietario.nombre}</td>
+                                                                        <td>${calcularEdad(new Date(registro.datos_propietario.fech_nac))} años</td>
+                                                                        <td>${registro.datos_propietario.genero}</td>
+                                                                        <td>${0}</td>
+                                                                        <td>${registro.datos_inmueble.fech_mensualidad}</td>
+                                                                        <td><a>Ver</a></td>
+                                                                    <tr/>`;
+    });
+    
+}
+
+function calcularEdad(fecha_nacimiento){
+    let ageDifMs = Date.now() - fecha_nacimiento.getTime();
+    let ageDate = new Date(ageDifMs);
+    return Math.abs(ageDate.getUTCFullYear() - 1970);
+}
 
 function recorrerVector(){
     let arreglo = [3,5,6,8,1];
@@ -87,3 +109,4 @@ function recorrerVector(){
     console.log(r);
 }
 
+cargarDatosEnTabla();
