@@ -1,0 +1,28 @@
+POO
+Programación Orientada a Objetos
+
+Manzana
+    -Propiedades ---> Atributos
+        -Color
+        -Tamaño
+    -Funcionalidades ---> Metodos 
+        -Rodar
+        -Caer
+        -Crecer
+
+Persona
+    -Propiedades ---> Atributos
+        -Nombre
+        -Edad
+        -Dirección
+        -Genero
+    -Funcionalidades ---> Metodos 
+        -Hablar
+        -Comer
+        -Correr
+        -Reír
+
+carlos = nueva Persona()
+carlos.Nombre 
+carlos.Hablar()
+carlos.Edad = 20 
