@@ -1,6 +1,6 @@
 //import {saludarAlPublico, NOMBRE,edad} from './modulo.js';
-import jsonModulo from './modulo.js';
-	
+// import jsonModulo from './modulo.js';
+import Estudiante from './clases/Estudiante.js';
 const DATOS_FORMULARIO = [
     {
         datos_propietario : {
@@ -17,6 +17,8 @@ const DATOS_FORMULARIO = [
         }
     }
 ];
+
+
 /*
 numeros.map(function(elemento, p){  
 	console.log("=====");
@@ -125,5 +127,8 @@ function condicionalReducido(){
 }
 
 cargarDatosEnTabla();
-jsonModulo.funcionSaludar();
+//jsonModulo.funcionSaludar();
 //console.log("El nombre que se importo fue " + NOMBRE + " y la edad fue "+edad)
+	
+let X = new Estudiante(11, "11C",  "Diana", "Bedoya");
+console.log(X);

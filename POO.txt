@@ -26,3 +26,23 @@ carlos = nueva Persona()
 carlos.Nombre 
 carlos.Hablar()
 carlos.Edad = 20 
+
+
+Propietario
+    Atributos
+        -Nombre
+        -Documento
+        -Genero
+        -Fecha_Nacimiento
+        -Inmueble
+    Metodos
+        calcularEdad()
+
+Inmueble
+    Atributos
+        -Metros_Cuadrados
+        -Tipo_Inmueble
+        -Num_habitantes
+        -Fecha_Mensualidad
+    Metodos
+        totalPagarAdministracion()

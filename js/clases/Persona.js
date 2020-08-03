@@ -1,4 +1,4 @@
-class Persona{
+export default class Persona{
      constructor(edad, nom, apellido1, genero){
         this.edad = edad;
         this.nombre = nom;
@@ -21,16 +21,4 @@ class Persona{
      setEdad(edad){
          this.edad = edad;
      }
-}
-
-class Estudiante extends Persona{
-    constructor(grado, grupo, nombre,  edad){
-        super(edad, nombre);
-        this.grado = grado;
-        this.grupo = grupo;
-    }
-    
-    estudiar(){
-        console.log("Estoy estudiante...");
-    }
 }
