@@ -1,21 +1,12 @@
 //import {saludarAlPublico, NOMBRE,edad} from './modulo.js';
 // import jsonModulo from './modulo.js';
 import Estudiante from './clases/Estudiante.js';
+import Propietario from './clases/Propietario.js';
+let propietario_inicial = new Propietario("Juan Perez", "32442343", "H", new Date("1980-10-10"));
+propietario_inicial.asignarInmueble(30, "C", 10, new Date("2020-08-06"));
+//propietario_inicial.inmueble.setTipoInmueble("C");
 const DATOS_FORMULARIO = [
-    {
-        datos_propietario : {
-            nombre : "Juan Perez", 
-            documento : "89736363", 
-            genero : "H", 
-            fech_nac : "10-10-1980"
-        }, 
-        datos_inmueble : {
-            metos_cuadrados : 30, 
-            tipo : "C", 
-            numero_habitantes : 10, 
-            fech_mensualidad : "10-0-2020"
-        }
-    }
+    propietario_inicial
 ];
 
 
@@ -84,13 +75,13 @@ $(document).ready((e) => {
 
 function cargarDatosEnTabla(){
 	document.querySelector("#tbl-mensualidades tbody").innerHTML = "";
-    DATOS_FORMULARIO.forEach( registro => {
+    DATOS_FORMULARIO.forEach( propietario => {
         document.querySelector("#tbl-mensualidades tbody").innerHTML += `<tr>
-                                                                        <td>${registro.datos_propietario.nombre}</td>
-                                                                        <td>${calcularEdad(new Date(registro.datos_propietario.fech_nac))} años</td>
-                                                                        <td>${registro.datos_propietario.genero === "F" ? "Mujer" : "Hombre"}</td>
+                                                                        <td>${propietario.nombre}</td>
+                                                                        <td>${propietario.calcularEdad()} años</td>
+                                                                        <td>${propietario.genero === "F" ? "Mujer" : "Hombre"}</td>
                                                                         <td>${0}</td>
-                                                                        <td>${registro.datos_inmueble.fech_mensualidad}</td>
+                                                                        <td>${propietario.inmueble.getFechaMensualidad()}</td>
                                                                         <td><a>Ver</a></td>
                                                                     <tr/>`;
     });
@@ -130,5 +121,5 @@ cargarDatosEnTabla();
 //jsonModulo.funcionSaludar();
 //console.log("El nombre que se importo fue " + NOMBRE + " y la edad fue "+edad)
 	
-let X = new Estudiante(11, "11C",  "Diana", "Bedoya");
-console.log(X);
+// let X = new Estudiante(11, "11C",  "Diana", "Bedoya");
+console.log(DATOS_FORMULARIO);

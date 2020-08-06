@@ -25,5 +25,14 @@ class Inmueble{
     setFechaMensualidad(fecha_mensualidad){
         this.fecha_mensualidad = fecha_mensualidad;
     }
+    
+    getMetrosCuadrados(){
+        return this.metros_cuadrados;
+    }
+    
+    getFechaMensualidad(){
+        return this.fecha_mensualidad;
+    }
+    
 }
 export default Inmueble;
